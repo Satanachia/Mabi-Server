@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{827878dc-67d1-426a-a776-048d5e873131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{623c53d5-4e1b-4e43-90b0-ceecbf311c90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ThirdParty">
+      <UniqueIdentifier>{b729b8fd-0ecb-4b79-b69d-47f0b2c70628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ThirdParty\ProtoBuf">
+      <UniqueIdentifier>{ce8440a9-303d-441b-b059-2ef07b5af24a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ThirdParty\ProtoBuf\Debug">
+      <UniqueIdentifier>{43f0bbbd-0cab-444d-b699-cfce52b3df63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ThirdParty\ProtoBuf\Release">
+      <UniqueIdentifier>{4f40e72d-6992-40ac-9da7-4f8127f579e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Protocol">
+      <UniqueIdentifier>{86763589-f437-4fc1-bc4f-330390cb24d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{6cd094d7-af49-48a5-b7ba-ba52e3b8eb7b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DummyClient.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerPacketHandler.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Enum.pb.cc">
+      <Filter>Protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="Protocol.pb.cc">
+      <Filter>Protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="Struct.pb.cc">
+      <Filter>Protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="DummyRoom.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerPacketHandler.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.pb.h">
+      <Filter>Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocol.pb.h">
+      <Filter>Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.pb.h">
+      <Filter>Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="DummyRoom.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Libraries\Libs\Protobuf\Debug\libprotobufd.pdb">
+      <Filter>Utils\ThirdParty\ProtoBuf\Debug</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Libraries\Libs\Protobuf\Debug\libprotobufd.lib">
+      <Filter>Utils\ThirdParty\ProtoBuf\Debug</Filter>
+    </Library>
+    <Library Include="..\Libraries\Libs\Protobuf\Release\libprotobuf.lib">
+      <Filter>Utils\ThirdParty\ProtoBuf\Release</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

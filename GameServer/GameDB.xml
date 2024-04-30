@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GameDB>
+        <Table name ="Account">
+                <Column name ="accountId" type ="int" notnull ="true" identity="1,1"/>
+                <Column name ="loginId" type ="nvarchar(20)" notnull ="true"/>
+                <Column name ="password" type ="nvarchar(20)" notnull ="true"/>
+                <Index type ="clustered">
+                        <PrimaryKey/>
+                        <Column name ="accountId"/>
+                </Index>
+                <Index type ="nonclustered">
+                        <UniqueKey/>
+                        <Column name ="loginId"/>
+                </Index>
+        </Table>
+
+        <Table name ="Character" desc="player">
+                <Column name ="accountId" type ="int" notnull ="true" />
+                <Column name ="jobType" type ="int" notnull ="true"/>
+                <Column name ="characterName" type ="nvarchar(20)" notnull ="true"/>
+                <Index type ="nonclustered">
+                        <UniqueKey/>
+                        <Column name ="characterName"/>
+                </Index>
+        </Table>
+        
+        <Table name ="Items">
+                <Column name ="characterName" type ="nvarchar(20)" notnull ="true"/>
+                <Column name ="itemId" type ="int" notnull ="true"/>
+                <Column name ="count" type ="int" notnull ="false"/>
+        </Table>
+
+        <Table name ="Money">
+                <Column name ="characterName" type ="nvarchar(20)" notnull ="true"/>
+                <Column name ="value" type ="int" notnull ="false"/>
+                <Index type ="clustered">
+                        <PrimaryKey/>
+                        <Column name ="characterName"/>
+                </Index>
+        </Table>
+
+        <Procedure name ="spSignUp">
+                <Param name ="@loginId" type ="nvarchar(20)"/>
+                <Param name ="@password" type ="nvarchar(20)"/>
+                <Body>
+                        <![CDATA[
+                        INSERT INTO [dbo].[Account] 
+                        ([loginId], [password]) 
+                        VALUES(@loginId, @password);
+                        ]]>
+                </Body>
+        </Procedure>
+
+        <Procedure name ="spGetAccountId">
+                <Param name ="@loginId" type ="nvarchar(20)"/>
+                <Param name ="@password" type ="nvarchar(20)"/>
+                <Body>
+                        <![CDATA[
+                        SELECT accountId
+                                FROM [dbo].[Account]
+                                WHERE loginId = @loginId AND password = @password
+                        ]]>
+                </Body>
+        </Procedure>
+        
+
+        <Procedure name ="spGetCharacters">
+                <Param name ="@accountId" type ="int"/>
+                <Body>
+                        <![CDATA[
+                        SELECT jobType, characterName
+                        FROM [dbo].[Character]
+                        WHERE accountId = @accountId;
+                        ]]>
+                </Body>
+        </Procedure>
+        
+        
+        <Procedure name ="spCreateNewCharacter">
+                <Param name ="@accountId" type ="int"/>
+                <Param name ="@type" type ="int"/>
+                <Param name ="@name" type ="nvarchar(20)"/>
+                <Body>
+                        <![CDATA[
+                        INSERT INTO [dbo].[Character] 
+                        ([accountId], [jobType], [characterName]) 
+                        VALUES(@accountId, @type, @name);
+                        ]]>
+                </Body>
+        </Procedure>
+
+        <Procedure name ="spGetItems">
+                <Param name ="@name" type ="nvarchar(20)"/>
+                <Body>
+                        <![CDATA[
+                        SELECT itemId, count
+                        FROM [dbo].[Items] 
+                        WHERE @name = characterName;
+                        ]]>
+                </Body>
+        </Procedure>
+
+        <Procedure name ="spUpdateItem">
+                <Param name ="@name" type ="nvarchar(20)"/>
+                <Param name ="@itemId" type ="int"/>
+                <Param name ="@count" type ="int"/>
+                <Body>
+                        <![CDATA[
+                        UPDATE [dbo].[Items] 
+                        SET count = @count
+                        WHERE characterName = @name AND itemId = @itemId;
+                        ]]>
+                </Body>
+        </Procedure>
+
+        <Procedure name ="spInsertItem">
+                <Param name ="@name" type ="nvarchar(20)"/>
+                <Param name ="@itemId" type ="int"/>
+                <Param name ="@count" type ="int"/>
+                <Body>
+                        <![CDATA[
+                        INSERT INTO  [dbo].[Items]
+                        VALUES (@name, @itemId, @count);
+                        ]]>
+                </Body>
+        </Procedure>
+
+        <Procedure name ="spGetMoney">
+                <Param name ="@name" type ="nvarchar(20)"/>
+                <Body>
+                        <![CDATA[
+                        SELECT value
+                        FROM [dbo].[Money] 
+                        WHERE @name = characterName;
+                        ]]>
+                </Body>
+        </Procedure>
+        
+        
+        
+        
+        
+        <!--<Table name ="Gold" desc="골드 테이블">
+                <Column name ="id" type ="int" notnull ="true" identity="1,1"/>
+                <Column name ="gold" type ="int" notnull ="false"/>
+                <Column name ="name" type ="nvarchar(50)" notnull ="false"/>
+                <Column name ="createDate" type ="datetime" notnull ="false"/>
+                <Index type ="clustered">
+                        <PrimaryKey/>
+                        <Column name ="id"/>
+                </Index>
+        </Table>
+
+        <Procedure name ="spInsertGold">
+                <Param name ="@gold" type ="int"/>
+                <Param name ="@name" type ="nvarchar(50)"/>
+                <Param name ="@createData" type ="datetime"/>
+                <Body>
+                        <![CDATA[
+                        INSERT INTO [dbo].[Gold] ([gold], [name], [createDate]) VALUES(@gold, @name, @createData);
+                        ]]>
+                </Body>
+        </Procedure>
+
+        <Procedure name ="spGetGold">
+                <Param name ="@gold" type ="int"/>
+                <Body>
+                        <![CDATA[
+                        SELECT id, gold, name, createDate FROM [dbo].[Gold] WHERE gold = (@gold);
+                        ]]>
+                </Body>
+        </Procedure>-->
+        
+</GameDB>

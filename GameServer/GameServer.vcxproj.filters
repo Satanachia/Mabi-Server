@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{f60e16c0-7a2c-4a73-abdb-4318fb73fd2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{2e39f27b-211e-4de0-97cd-5533eea840f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Protocol">
+      <UniqueIdentifier>{5c980eaf-5544-4f87-a3c3-3103c8daae5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Protocol\Result">
+      <UniqueIdentifier>{744dc880-50a1-494c-b034-58546e32a64d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Protocol\Gen">
+      <UniqueIdentifier>{5f22730e-4b47-44e9-ba45-28564f5433b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ThirdParty">
+      <UniqueIdentifier>{4a993b83-b4c4-41b4-9df5-9479ad7aeea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ThirdParty\ProtoBuf">
+      <UniqueIdentifier>{98980fdd-53e6-4957-b4f4-30ad2ce753b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ThirdParty\ProtoBuf\Debug">
+      <UniqueIdentifier>{62e3a9d7-72db-4b2c-9d83-f5fd6afb71e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ThirdParty\ProtoBuf\Release">
+      <UniqueIdentifier>{e51bbb8f-7be1-4f48-9197-afc2608a6387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameContents">
+      <UniqueIdentifier>{21cb9093-049c-47f6-be9a-189d0c39ec9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{cf620298-5920-4fa1-9c19-e175a36bf0a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameContents\Object">
+      <UniqueIdentifier>{310a2436-0e42-4cdd-90bb-7153b1933ade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameContents\FSM">
+      <UniqueIdentifier>{2f740c39-bb64-454c-94e3-e0288c672f57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameContents\Object\Projectile">
+      <UniqueIdentifier>{3c924d81-1f28-4eb8-b27b-5dc13b55e476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameContents\Object\Creature">
+      <UniqueIdentifier>{0b91ce93-a3d3-4e7a-ac85-bd91b84d4e6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameContents\Object\Item">
+      <UniqueIdentifier>{00a9b284-88db-4102-9411-fb170d6270d4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameServer.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSession.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSessionManager.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientPacketHandler.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Enum.pb.cc">
+      <Filter>Protocol\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Protocol.pb.cc">
+      <Filter>Protocol\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Struct.pb.cc">
+      <Filter>Protocol\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>GameContents</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>GameContents\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="DbManager.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>GameContents\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseState.cpp">
+      <Filter>GameContents\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleState.cpp">
+      <Filter>GameContents\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveState.cpp">
+      <Filter>GameContents\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilMath.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="HitReactState.cpp">
+      <Filter>GameContents\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalAttackState.cpp">
+      <Filter>GameContents\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="Creature.cpp">
+      <Filter>GameContents\Object\Creature</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>GameContents\Object\Creature</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>GameContents\Object\Creature</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>GameContents\Object\Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldItem.cpp">
+      <Filter>GameContents\Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterSpawner.cpp">
+      <Filter>GameContents</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSession.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSessionManager.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientPacketHandler.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.pb.h">
+      <Filter>Protocol\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocol.pb.h">
+      <Filter>Protocol\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.pb.h">
+      <Filter>Protocol\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ProtoBuf\bin\Templates\PacketHandler.h">
+      <Filter>Protocol\Gen</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>GameContents</Filter>
+    </ClInclude>
+    <ClInclude Include="GenProcedures.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>GameContents\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="DbManager.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>GameContents\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>GameContents\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleState.h">
+      <Filter>GameContents\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveState.h">
+      <Filter>GameContents\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilMath.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="HitReactState.h">
+      <Filter>GameContents\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalAttackState.h">
+      <Filter>GameContents\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="Creature.h">
+      <Filter>GameContents\Object\Creature</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>GameContents\Object\Creature</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>GameContents\Object\Creature</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>GameContents\Object\Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldItem.h">
+      <Filter>GameContents\Object\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterSpawner.h">
+      <Filter>GameContents</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Common\ProtoBuf\bin\Enum.proto">
+      <Filter>Protocol\Gen</Filter>
+    </None>
+    <None Include="..\Common\ProtoBuf\bin\GenPacket.bat">
+      <Filter>Protocol\Gen</Filter>
+    </None>
+    <None Include="..\Common\ProtoBuf\bin\Protocol.proto">
+      <Filter>Protocol\Gen</Filter>
+    </None>
+    <None Include="..\Common\ProtoBuf\bin\Struct.proto">
+      <Filter>Protocol\Gen</Filter>
+    </None>
+    <None Include="..\Common\ProtoBuf\bin\protoc.exe">
+      <Filter>Protocol\Gen</Filter>
+    </None>
+    <None Include="..\Libraries\Libs\Protobuf\Debug\libprotobufd.pdb">
+      <Filter>Utils\ThirdParty\ProtoBuf\Debug</Filter>
+    </None>
+    <None Include="..\Common\ProtoBuf\bin\GenPackets.exe">
+      <Filter>Protocol\Gen</Filter>
+    </None>
+    <None Include="..\Common\Procedures\GenProcs.bat">
+      <Filter>DB</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Libraries\Libs\Protobuf\Debug\libprotobufd.lib">
+      <Filter>Utils\ThirdParty\ProtoBuf\Debug</Filter>
+    </Library>
+    <Library Include="..\Libraries\Libs\Protobuf\Release\libprotobuf.lib">
+      <Filter>Utils\ThirdParty\ProtoBuf\Release</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="GameDB.xml">
+      <Filter>DB</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>
